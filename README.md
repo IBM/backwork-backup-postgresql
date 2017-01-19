@@ -26,7 +26,7 @@ $ pip install monsoon-backup-mysql
 
 Alternatively, you can install it directly from GHE:
 ```sh
-$ pip install git+ssh://git@github.ibm.com/apset/monsoon-backup-mongo
+$ pip install git+ssh://git@github.ibm.com/apset/monsoon-backup-mysql
 ```
 
 ## Using
@@ -43,7 +43,7 @@ supported by `mysqldump`. Use `mysqldump -h` for more information.
 
 optional arguments:
   -h, --help            show this help message and exit
-  --gzip                compress output file
+  --gzip                compress output file  (requires gzip to be installed)
   -o OUTPUT, --output OUTPUT
                         output file path
 ```
