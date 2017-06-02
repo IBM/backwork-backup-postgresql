@@ -1,9 +1,11 @@
-import argparse
+"""Add support for MySQL backups
+"""
+
 import logging
 import subprocess
 import sys
 
-log = logging.getLogger(__name__)
+LOG = logging.getLogger(__name__)
 
 class MySQLBackup(object):
     """Backup a MySQL database.
@@ -24,10 +26,10 @@ class MySQLBackup(object):
         mysql_parser = subparsers.add_parser(cls.command, description=cls.__doc__)
 
         mysql_parser.add_argument("--gzip", action="store_true", required=False,
-            help="compress output file (requires gzip to be installed)")
+                                  help="compress output file (requires gzip to be installed)")
 
         mysql_parser.add_argument("-o", "--output", required=False,
-            help="output file path")
+                                  help="output file path")
 
     def backup(self):
         """Backup a MySQL database."""
@@ -36,9 +38,8 @@ class MySQLBackup(object):
         mysqldump_out = None
 
         if self.args.output:
-            log.info("starting mysql backup...")
+            LOG.info("starting mysql backup...")
             output_file = open(self.args.output, 'w')
-
         if self.args.gzip:
             mysqldump_out = subprocess.PIPE
 
@@ -58,17 +59,17 @@ class MySQLBackup(object):
             mysqldump_process = subprocess.Popen(mysqldump_cmd, stdout=mysqldump_out)
 
             if self.args.gzip:
-                gzip_process = subprocess.Popen(["gzip"], stdin=mysqldump_process.stdout, stdout=gzip_out)
+                subprocess.Popen(["gzip"], stdin=mysqldump_process.stdout,
+                                 stdout=gzip_out)
                 mysqldump_process.stdout.close()
 
             if self.args.output:
-                log.info("mysql backup complete")
+                LOG.info("mysql backup complete")
 
-        except Exception as e:
-            log.error("Failed to backup MySQL database")
-            raise e
+        except Exception as error:
+            LOG.error("Failed to backup MySQL database")
+            raise error
 
         finally:
             if output_file and not output_file.closed:
                 output_file.close()
-

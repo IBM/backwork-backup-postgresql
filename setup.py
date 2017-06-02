@@ -1,17 +1,20 @@
-from setuptools import setup, find_packages
-from os import path
+"""Add support for MySQL backups
+"""
 
-here = path.abspath(path.dirname(__file__))
+from os import path
+from setuptools import setup, find_packages
+
+HERE = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, 'README.md')) as f:
-    long_description = f.read()
+with open(path.join(HERE, 'README.md')) as f:
+    LONG_DESCRIPTION = f.read()
 
 setup(
     name="monsoon-backup-mysql",
-    version="0.1.0",
+    version="0.1.1",
     description="Monsoon plug-in for MySQL backups.",
-    long_description=long_description,
+    long_description=LONG_DESCRIPTION,
     url="https://github.ibm.com/apset/monsoon-backup-mysql",
     author="Luiz Aoqui",
     author_email="laoqui@ca.ibm.com",
@@ -30,7 +33,7 @@ setup(
     ],
     packages=find_packages(),
     install_requires=[
-        "monsoon>=0.1.0"
+        "monsoon-cli>=0.1.0"
     ],
     entry_points={
         "monsoon.backups": [

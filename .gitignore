@@ -1,8 +1,11 @@
 .DS_Store
 venv
 *.pyc
+*.tar.gz
+*.whl
 
 # Distribution / packaging
 build/
 dist/
 *.egg-info/
+.idea/
