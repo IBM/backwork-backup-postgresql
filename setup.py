@@ -12,7 +12,7 @@ with open(path.join(HERE, 'README.md')) as f:
 
 setup(
     name="monsoon-backup-mysql",
-    version="0.1.2",
+    version="0.1.3",
     description="Monsoon plug-in for MySQL backups.",
     long_description=LONG_DESCRIPTION,
     url="https://github.ibm.com/apset/monsoon-backup-mysql",
