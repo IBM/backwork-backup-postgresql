@@ -59,9 +59,12 @@ class MySQLBackup(object):
             mysqldump_process = subprocess.Popen(mysqldump_cmd, stdout=mysqldump_out)
 
             if self.args.gzip:
-                subprocess.Popen(["gzip"], stdin=mysqldump_process.stdout,
+                gzip_process = subprocess.Popen(["gzip"], stdin=mysqldump_process.stdout,
                                  stdout=gzip_out)
                 mysqldump_process.stdout.close()
+                gzip_process.wait()
+            else:
+                mysqldump_process.wait()
 
             if self.args.output:
                 LOG.info("mysql backup complete")
