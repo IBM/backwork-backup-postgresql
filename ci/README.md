@@ -22,9 +22,12 @@ travis login -X -g <...>
 
 ## Slack
 
-The value for `notifications/slack/secure` is obtained by running the following
+The value for `notifications/slack/secure` is set by running the following
 command.
 
 ```sh
-travis encrypt "<SLACK_TEAM_SUB_DOMAIN>:<SLACK_TOKEN>"
+travis encrypt "<SLACK_TEAM_SUB_DOMAIN>:<SLACK_TOKEN>" --add notifications.slack
 ```
+
+You can look up the current value here:
+<https://ibm-dbg.slack.com/services/B574PT1LN#service_setup>

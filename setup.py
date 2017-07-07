@@ -1,4 +1,4 @@
-"""Add support for MySQL backups
+"""Add support for PostgreSQL backups
 """
 
 from os import path
@@ -11,11 +11,11 @@ with open(path.join(HERE, 'README.md')) as f:
     LONG_DESCRIPTION = f.read()
 
 setup(
-    name="monsoon-backup-mysql",
-    version="0.1.5",
-    description="Monsoon plug-in for MySQL backups.",
+    name="monsoon-backup-postgresql",
+    version="0.1.0",
+    description="Monsoon plug-in for PostgreSQL backups.",
     long_description=LONG_DESCRIPTION,
-    url="https://github.ibm.com/apset/monsoon-backup-mysql",
+    url="https://github.ibm.com/apset/monsoon-backup-postgresql",
     author="Luiz Aoqui",
     author_email="laoqui@ca.ibm.com",
     license="IBM",
@@ -37,7 +37,7 @@ setup(
     ],
     entry_points={
         "monsoon.backups": [
-            "mysql=mysql:MySQLBackup"
+            "postgresql=postgresql:PostgreSQLBackup"
         ]
     }
 )
