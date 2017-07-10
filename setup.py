@@ -12,7 +12,7 @@ with open(path.join(HERE, 'README.md')) as f:
 
 setup(
     name="monsoon-backup-postgresql",
-    version="0.1.0",
+    version="0.1.2",
     description="Monsoon plug-in for PostgreSQL backups.",
     long_description=LONG_DESCRIPTION,
     url="https://github.ibm.com/apset/monsoon-backup-postgresql",
