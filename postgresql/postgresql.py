@@ -59,7 +59,7 @@ class PostgreSQLBackup(object):
                 pg_dump_out = sys.stdout
 
         try:
-            os.environ['PGPASSWORD'] = self.args.gzip
+            os.environ['PGPASSWORD'] = self.args.password
             pg_dump_cmd = ["pg_dump"] + self.extra
             pg_dump_process = subprocess.Popen(pg_dump_cmd, stdout=pg_dump_out)
 
