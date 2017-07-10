@@ -1,6 +1,7 @@
 """Add support for PostgreSQL backups
 """
 
+import os
 from os import path
 from setuptools import setup, find_packages
 
@@ -12,7 +13,7 @@ with open(path.join(HERE, 'README.md')) as f:
 
 setup(
     name="monsoon-backup-postgresql",
-    version="0.1.2",
+    version=os.environ.get("TRAVIS_TAG", "dev"),
     description="Monsoon plug-in for PostgreSQL backups.",
     long_description=LONG_DESCRIPTION,
     url="https://github.ibm.com/apset/monsoon-backup-postgresql",
