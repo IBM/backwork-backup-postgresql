@@ -8,6 +8,10 @@ import os
 
 LOG = logging.getLogger(__name__)
 
+class PostgreSQLBackupException(Exception):
+    """Raise for errors"""
+    pass
+
 class PostgreSQLBackup(object):
     """Backup a PostgreSQL database.
 
@@ -37,26 +41,19 @@ class PostgreSQLBackup(object):
 
     def backup(self):
         """Backup a PostgreSQL database."""
-        output_file = None
+        output_file = sys.stdout
         gzip_out = None
         pg_dump_out = None
 
         if self.args.output:
             LOG.info("starting postgresql backup...")
             output_file = open(self.args.output, 'w')
+
         if self.args.gzip:
             pg_dump_out = subprocess.PIPE
-
-            if output_file:
-                gzip_out = output_file
-            else:
-                gzip_out = sys.stdout
-
+            gzip_out = output_file
         else:
-            if output_file:
-                pg_dump_out = output_file
-            else:
-                pg_dump_out = sys.stdout
+            pg_dump_out = output_file
 
         try:
             os.environ['PGPASSWORD'] = self.args.password
@@ -67,9 +64,11 @@ class PostgreSQLBackup(object):
                 gzip_process = subprocess.Popen(["gzip"], stdin=pg_dump_process.stdout,
                                                 stdout=gzip_out)
                 pg_dump_process.stdout.close()
-                gzip_process.wait()
+                if gzip_process.wait() != 0:
+                    raise PostgreSQLBackupException("gzip failed for Postgres")
 
-            pg_dump_process.wait()
+            if pg_dump_process.wait() != 0:
+                raise PostgreSQLBackupException("pg_dump failed for Postgres")
 
             if self.args.output:
                 LOG.info("PostgreSQL backup complete")
