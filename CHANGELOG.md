@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.1.4][] - 2017-07-10
 ### Fixed
--   Fail for backup errors
+-   Made plugin fail with non-zero status for backup errors
 
 ## [0.1.3][] - 2017-07-10
 ### Fixed
@@ -17,3 +17,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 -   Initial version
 
+[Unreleased]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/v0.1.4...HEAD
+[0.1.4]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/v0.1.3...v0.1.4
+[0.1.3]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/v0.1.0...v0.1.3

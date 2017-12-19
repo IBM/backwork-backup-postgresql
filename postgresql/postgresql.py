@@ -8,9 +8,11 @@ import os
 
 LOG = logging.getLogger(__name__)
 
-class PostgreSQLBackupException(Exception):
+
+class PostgreSQLBackupException(Exception):  # pylint: disable=unused-variable
     """Raise for errors"""
     pass
+
 
 class PostgreSQLBackup(object):
     """Backup a PostgreSQL database.
