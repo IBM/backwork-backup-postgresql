@@ -1,7 +1,6 @@
 """Add support for PostgreSQL backups
 """
 
-import os
 from os import path
 from setuptools import setup, find_packages
 
