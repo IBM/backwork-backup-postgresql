@@ -13,7 +13,7 @@ with open(path.join(HERE, 'README.md')) as f:
 
 setup(
     name="monsoon-backup-postgresql",
-    version=os.environ.get("TRAVIS_TAG", "dev"),
+    version="0.1.5",
     description="Monsoon plug-in for PostgreSQL backups.",
     long_description=LONG_DESCRIPTION,
     url="https://github.ibm.com/apset/monsoon-backup-postgresql",
@@ -34,7 +34,7 @@ setup(
     ],
     packages=find_packages(),
     install_requires=[
-        "monsoon-cli>=0.1.0"
+        "monsoon-cli>=0.1.7"
     ],
     entry_points={
         "monsoon.backups": [

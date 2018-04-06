@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.5][] - 2018-04-06
+### Fixed
+-   Fixed broken version declaration.
+-   Bumped `monsoon-cli` dependency.
+
 ## [0.1.4][] - 2017-07-10
 ### Fixed
 -   Made plugin fail with non-zero status for backup errors
@@ -17,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 -   Initial version
 
-[Unreleased]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/v0.1.4...HEAD
-[0.1.4]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/v0.1.3...v0.1.4
-[0.1.3]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/v0.1.0...v0.1.3
+[Unreleased]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/0.1.5...HEAD
+[0.1.5]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/0.1.4...0.1.5
+[0.1.4]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/0.1.3...0.1.4
+[0.1.3]: https://github.ibm.com/apset/monsoon-backup-postgresql/compare/0.1.0...0.1.3
