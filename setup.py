@@ -11,14 +11,15 @@ with open(path.join(HERE, 'README.md')) as f:
     LONG_DESCRIPTION = f.read()
 
 setup(
-    name="monsoon-backup-postgresql",
+    name="backwork-backup-postgresql",
     version="0.1.5",
-    description="Monsoon plug-in for PostgreSQL backups.",
+    description="Backwork plug-in for PostgreSQL backups.",
     long_description=LONG_DESCRIPTION,
-    url="https://github.ibm.com/apset/monsoon-backup-postgresql",
+    long_description_content_type="text/markdown",
+    url="https://github.com/ibm/backwork-backup-postgresql",
     author="Luiz Aoqui",
     author_email="laoqui@ca.ibm.com",
-    license="IBM",
+    license="Apache 2",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Console",
@@ -27,13 +28,14 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 2 :: Only",
+        'License :: OSI Approved :: Apache Software License',
         "Topic :: Database",
         "Topic :: System :: Archiving :: Backup",
         "Topic :: Utilities"
     ],
     packages=find_packages(),
     install_requires=[
-        "monsoon-cli>=0.1.7"
+        "backwork"
     ],
     entry_points={
         "monsoon.backups": [
