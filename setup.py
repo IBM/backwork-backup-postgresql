@@ -12,7 +12,7 @@ with open(path.join(HERE, 'README.md')) as f:
 
 setup(
     name="backwork-backup-postgresql",
-    version="0.1.5",
+    version="0.2.0",
     description="Backwork plug-in for PostgreSQL backups.",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
@@ -38,7 +38,7 @@ setup(
         "backwork"
     ],
     entry_points={
-        "monsoon.backups": [
+        "backwork.backups": [
             "postgresql=postgresql:PostgreSQLBackup"
         ]
     }
