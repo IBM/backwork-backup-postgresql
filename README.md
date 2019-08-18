@@ -1,4 +1,4 @@
-# backwork-backup-postgresql
+# backwork-backup-postgresql [![Build Status](https://travis-ci.org/IBM/backwork-backup-postgresql.svg?branch=master)](https://travis-ci.org/IBM/backwork-backup-postgresql) [![PyPI version](https://badge.fury.io/py/backwork-backup-postgresql.svg)](https://badge.fury.io/py/backwork-backup-postgresql)
 Add support for PostgreSQL backups on [`backwork`](https://github.ibm.com/apset/backwork).
 
 ## Requirements
